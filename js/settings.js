@@ -7,9 +7,9 @@
 function setFontSize(scale) {
     document.documentElement.style.setProperty('--font-scale', scale);
     
-    const settings = Storage.getSettings();
+    const settings = WellbeingStorage.getSettings();
     settings.fontSize = scale;
-    Storage.setSettings(settings);
+    WellbeingStorage.setSettings(settings);
     
     // Update active button state
     document.querySelectorAll('.setting-option').forEach(btn => {
@@ -22,7 +22,7 @@ function setFontSize(scale) {
 
 // Apply saved settings on page load
 function applySavedSettings() {
-    const settings = Storage.getSettings();
+    const settings = WellbeingStorage.getSettings();
     
     // Apply font size
     if (settings.fontSize) {
@@ -42,7 +42,7 @@ function applySavedSettings() {
 // Clear goals only
 function clearGoals() {
     if (confirm('Are you sure you want to clear all your goals? This cannot be undone.')) {
-        Storage.clearGoals();
+        WellbeingStorage.clearGoals();
         alert('All goals have been cleared.');
     }
 }
@@ -50,7 +50,7 @@ function clearGoals() {
 // Clear favourites only
 function clearFavourites() {
     if (confirm('Are you sure you want to clear all your favourites? This cannot be undone.')) {
-        Storage.clearFavourites();
+        WellbeingStorage.clearFavourites();
         alert('All favourites have been cleared.');
     }
 }
@@ -64,7 +64,7 @@ function clearAllData() {
         
         if (secondConfirm) {
             // Clear all localStorage
-            Storage.clearAll();
+            WellbeingStorage.clearAll();
             localStorage.removeItem('dwp_settings');
             
             // Reset font scale
