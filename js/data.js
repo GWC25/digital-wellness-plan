@@ -1,6 +1,6 @@
 // ==================================
 // DIGITAL WELLNESS PLAN - DATA
-// 30 Cards + 40 Messages
+// 45 Cards + 40 Messages
 // ==================================
 
 // MOTIVATIONAL MESSAGES (40 total)
@@ -52,9 +52,11 @@ const MOTIVATIONAL_MESSAGES = [
     "Use do not disturb mode as your default, not your exception."
 ];
 
-// WELLBEING CARDS (30 total - about 4 per section)
+// WELLBEING CARDS (45 total)
 const WELLBEING_CARDS = [
-    // SCREEN TIME & BOUNDARIES (4 cards)
+    // ==========================================
+    // SCREEN TIME & BOUNDARIES (7 cards)
+    // ==========================================
     {
         id: 'screen-time-1',
         section: 'Screen Time & Boundaries',
@@ -111,8 +113,55 @@ const WELLBEING_CARDS = [
             'Physically separate work devices when off duty - put them in a drawer or another room'
         ]
     },
-    
-    // COMMUNICATION STRESS (4 cards)
+    {
+        id: 'screen-time-5',
+        section: 'Screen Time & Boundaries',
+        icon: '🔕',
+        symptom: 'No Protected Focus Time',
+        description: 'Interruptions come constantly - Teams pings, email notifications, calendar reminders. You never have uninterrupted time to think deeply or complete important work.',
+        treatment: 'Set Quiet Hours and Focus Time',
+        strategies: [
+            'Use Focus Time in Outlook to block 2-4 hour chunks for deep work - it automatically declines meetings and silences notifications',
+            'Set your Teams status to Do Not Disturb or Focusing during these blocks',
+            'Schedule your Focus Time for your peak energy hours (often mornings)',
+            'Communicate your focus blocks to colleagues: "I am unreachable 9-11am for deep work"',
+            'Turn off desktop notifications completely during focus blocks'
+        ]
+    },
+    {
+        id: 'screen-time-6',
+        section: 'Screen Time & Boundaries',
+        icon: '🔒',
+        symptom: 'Work Access Anywhere Trap',
+        description: 'You can access work email and files from your personal phone, tablet, home computer. The ability to work from anywhere means you work everywhere, all the time.',
+        treatment: 'Implement Device Separation (Cyber Essentials Plus)',
+        strategies: [
+            'Follow Cyber Essentials Plus policy: only access work from approved work devices',
+            'Remove Outlook and Teams from personal devices - keep work on work devices only',
+            'When you leave work, physically leave your work devices behind or put them away',
+            'Create a ritual: close work laptop, put it in a drawer or bag, walk away',
+            'If you must have work email on personal phone, delete the app on weekends'
+        ]
+    },
+    {
+        id: 'screen-time-7',
+        section: 'Screen Time & Boundaries',
+        icon: '📊',
+        symptom: 'No Awareness of Screen Habits',
+        description: 'You have no idea how much time you actually spend on screens, which apps consume most of your time, or when you are most distracted. Without data, you cannot improve.',
+        treatment: 'Track Screen Time Patterns',
+        strategies: [
+            'Enable Screen Time tracking on iPhone (Settings > Screen Time) or Digital Wellbeing on Android',
+            'Review your weekly report every Sunday - notice patterns without judgment',
+            'Use Viva Insights in Microsoft 365 to see collaboration hours and after-hours work patterns',
+            'Set app time limits for your biggest time-drains (often social media or news)',
+            'Track one metric to improve each week: reduce evening screen time, increase focus time, etc.'
+        ]
+    },
+
+    // ==========================================
+    // COMMUNICATION STRESS (9 cards)
+    // ==========================================
     {
         id: 'comm-1',
         section: 'Communication Stress',
@@ -169,8 +218,85 @@ const WELLBEING_CARDS = [
             'Start your day with YOUR priority, not your inbox demands'
         ]
     },
-    
-    // INFORMATION OVERLOAD (4 cards)
+    {
+        id: 'comm-5',
+        section: 'Communication Stress',
+        icon: '🟢',
+        symptom: 'Always Appear Available',
+        description: 'Your Teams status is always green. People ping you anytime because you appear available. You feel obligated to respond immediately when you see the green dot.',
+        treatment: 'Use Status to Protect Your Time',
+        strategies: [
+            'Set your Teams status to match your actual availability: Busy during focus work, Do Not Disturb for deep work',
+            'Use Focusing status when you need uninterrupted time - it tells others you will respond later',
+            'Schedule status changes: automatically go to Do Not Disturb outside work hours',
+            'Add a status message: "In meetings until 2pm" or "Checking messages twice daily"',
+            'Remember: Being available does not mean being interruptible'
+        ]
+    },
+    {
+        id: 'comm-6',
+        section: 'Communication Stress',
+        icon: '📁',
+        symptom: 'Email Chaos and Clutter',
+        description: 'Everything lands in your inbox. Important emails get buried under newsletters, notifications, and low-priority messages. You waste time manually sorting and searching.',
+        treatment: 'Automate Email Organization with Folders and Rules',
+        strategies: [
+            'Create folders for major categories: Action Needed, FYI Only, Team Updates, Newsletters, Admin',
+            'Set up Outlook Rules to auto-sort emails: newsletters to Reading folder, team updates to their folder',
+            'Use the Focused/Other inbox feature - train it by moving emails to the right category',
+            'Archive processed emails daily - keep inbox for action items only',
+            'Unsubscribe from anything auto-sorted to a folder you never check'
+        ]
+    },
+    {
+        id: 'comm-7',
+        section: 'Communication Stress',
+        icon: '📝',
+        symptom: 'Written Communication Takes Forever',
+        description: 'You struggle with writing emails, messages, or documentation. It takes ages to type things out. You avoid written communication because it is exhausting and time-consuming.',
+        treatment: 'Use Voice Notes for Quick Capture',
+        strategies: [
+            'Use voice recording on your phone to capture ideas, tasks, and notes instead of typing',
+            'Send voice messages in Teams for quick updates (more personal than text, faster than typing)',
+            'Use voice-to-text dictation in Outlook and Word for longer messages (easier than typing)',
+            'Record voice notes to yourself for ideas, tasks, and reminders throughout the day',
+            'Transcribe voice notes later when at your computer if needed, or keep as voice for yourself'
+        ]
+    },
+    {
+        id: 'comm-8',
+        section: 'Communication Stress',
+        icon: 'ℹ️',
+        symptom: 'Misunderstood Due to Dyslexia',
+        description: 'You worry about spelling and grammar errors. People might not understand your communication challenges. You spend excessive time proofreading or avoid writing altogether.',
+        treatment: 'Communicate Your Needs Proactively',
+        strategies: [
+            'Add a note to your email signature: "I am dyslexic - please excuse any typos"',
+            'Use Outlook Editor (Review > Editor) for spelling and grammar checks before sending',
+            'Enable Read Aloud in Outlook to hear your message before sending - catch errors by listening',
+            'Use Immersive Reader in Microsoft 365 apps for better reading experience',
+            'Be upfront in Teams: "I use voice-to-text, so please excuse any odd phrasing"'
+        ]
+    },
+    {
+        id: 'comm-9',
+        section: 'Communication Stress',
+        icon: '🎉',
+        symptom: 'Only Negative Feedback Given',
+        description: 'You rarely acknowledge good work from colleagues or students. Communication feels transactional and critical. Team morale suffers because appreciation is not expressed.',
+        treatment: 'Build Recognition into Daily Practice',
+        strategies: [
+            'Use Praise in Microsoft Teams - send praise stickers for good work (takes 10 seconds)',
+            'Set a weekly reminder to praise at least 3 people who helped you or did great work',
+            'Reply to good work emails with a quick "Great work on this!" rather than just moving on',
+            'In meetings, start with appreciations before diving into problems',
+            'Make it specific: "I appreciated how you handled that student situation" vs "Good job"'
+        ]
+    },
+
+    // ==========================================
+    // INFORMATION OVERLOAD (4 cards - unchanged)
+    // ==========================================
     {
         id: 'info-1',
         section: 'Information Overload',
@@ -227,8 +353,10 @@ const WELLBEING_CARDS = [
             'Notice when you are genuinely learning vs. procrastinating through research'
         ]
     },
-    
-    // WORK-LIFE BALANCE (4 cards)
+
+    // ==========================================
+    // WORK-LIFE BALANCE (6 cards)
+    // ==========================================
     {
         id: 'work-1',
         section: 'Work-Life Balance',
@@ -285,8 +413,40 @@ const WELLBEING_CARDS = [
             'Treat lunch as non-negotiable protected time, like a meeting with yourself'
         ]
     },
-    
-    // SLEEP & EVENING USE (3 cards)
+    {
+        id: 'work-5',
+        section: 'Work-Life Balance',
+        icon: '🌐',
+        symptom: 'No Central Wellbeing Resources',
+        description: 'You know the college has wellbeing resources, but you do not know where to find them. Support services, mental health resources, and wellness programs are scattered and hard to access when you need them.',
+        treatment: 'Bookmark Your Wellbeing SharePoint',
+        strategies: [
+            'Find and bookmark your college Wellbeing SharePoint site (ask HR or PLS if you do not have the link)',
+            'Explore what is available: counseling services, mental health resources, employee assistance programs, wellness activities',
+            'Add crisis contacts to your phone: occupational health, HR wellbeing lead, employee assistance hotline',
+            'Check the site monthly for new programs, workshops, or support offerings',
+            'Share the link with colleagues who might benefit - normalize using wellbeing resources'
+        ]
+    },
+    {
+        id: 'work-6',
+        section: 'Work-Life Balance',
+        icon: '🗂️',
+        symptom: 'Cluttered Chaotic Workspace',
+        description: 'Your desk is piled with papers, sticky notes everywhere, cables tangled. Your digital desktop has 100+ files. The clutter creates mental fog and makes it hard to focus or find anything.',
+        treatment: 'Organize Physical and Digital Workspace',
+        strategies: [
+            'Physical: Spend 15 minutes tidying your desk daily before leaving - file papers, clear coffee cups, straighten up',
+            'Digital: Create folders on your desktop by project/term - move files out of desktop clutter weekly',
+            'Cable management: Use clips or ties to organize charging cables and reduce visual noise',
+            'One in, one out: before bringing new items to your desk, remove something old',
+            'Weekly reset: Friday afternoon, clear everything non-essential - start Monday fresh'
+        ]
+    },
+
+    // ==========================================
+    // SLEEP & EVENING USE (3 cards - unchanged)
+    // ==========================================
     {
         id: 'sleep-1',
         section: 'Sleep & Evening Use',
@@ -329,8 +489,10 @@ const WELLBEING_CARDS = [
             'Notice how different types of content affect your ability to sleep - and adjust accordingly'
         ]
     },
-    
-    // FOCUS & PRODUCTIVITY (4 cards)
+
+    // ==========================================
+    // FOCUS & PRODUCTIVITY (8 cards)
+    // ==========================================
     {
         id: 'focus-1',
         section: 'Focus & Productivity',
@@ -387,8 +549,70 @@ const WELLBEING_CARDS = [
             'Learn to say no to meetings and requests that do not serve your core priorities'
         ]
     },
-    
-    // SOCIAL MEDIA (3 cards)
+    {
+        id: 'focus-5',
+        section: 'Focus & Productivity',
+        icon: '📅',
+        symptom: 'Reactive Calendar Chaos',
+        description: 'Your calendar fills with back-to-back meetings. You have no time blocked for actual work. Other people control your schedule completely. Important projects never get done because you have no protected time.',
+        treatment: 'Master Time Blocking in Outlook',
+        strategies: [
+            'Block your calendar for important work FIRST - treat these blocks like meetings with yourself',
+            'Use color coding: green for focus work, blue for meetings, red for admin time',
+            'Schedule email processing time (30 min, 2-3x daily) - do not check email outside these blocks',
+            'Block breaks and lunch - if it is not in the calendar, it does not happen',
+            'Review and plan your week every Friday afternoon - block next week before requests come in'
+        ]
+    },
+    {
+        id: 'focus-6',
+        section: 'Focus & Productivity',
+        icon: '📊',
+        symptom: 'No Insight into Work Patterns',
+        description: 'You do not know how much time you spend in meetings vs. focused work. You are not sure when you do your best work or what drains your energy. Without data, you cannot optimize your schedule.',
+        treatment: 'Use Viva Insights for Data-Driven Improvements',
+        strategies: [
+            'Open Viva Insights in Outlook or Teams - review your weekly digest every Monday',
+            'Check your Focus time metric - aim for at least 10 hours per week of uninterrupted work time',
+            'Review After hours work - notice when you are working outside normal hours and why',
+            'Use suggested actions: Book time to focus, Protect time for lunch, Schedule 1:1s with your team',
+            'Track one improvement each month: reduce meeting hours, increase focus time, protect breaks'
+        ]
+    },
+    {
+        id: 'focus-7',
+        section: 'Focus & Productivity',
+        icon: '🧘',
+        symptom: 'No Mental Breaks During Day',
+        description: 'You go from task to task, meeting to meeting, with no pause. By afternoon you are exhausted and scattered. You feel burned out but do not know how to fit in breaks.',
+        treatment: 'Integrate Headspace Mindfulness Breaks',
+        strategies: [
+            'Access Headspace through Microsoft 365 (available in Viva app if your org has enabled it)',
+            'Use Move Mode for 1-minute mindful movement breaks between meetings',
+            'Try Focus Music during deep work - designed to help concentration without lyrics',
+            'Take a 5-minute guided meditation after lunch to reset for the afternoon',
+            'Use Sleep sounds if you are wound up at end of day - helps transition to evening'
+        ]
+    },
+    {
+        id: 'focus-8',
+        section: 'Focus & Productivity',
+        icon: '🤖',
+        symptom: 'Overwhelmed by Email Volume',
+        description: 'You spend hours processing email manually. Deciding what to do with each message, writing repetitive replies, searching for information. Email consumes time better spent on meaningful work.',
+        treatment: 'Let Copilot Help Manage Your Inbox',
+        strategies: [
+            'Use Copilot in Outlook to summarize long email threads - get the key points in seconds',
+            'Ask Copilot to draft replies to routine emails - edit and send rather than writing from scratch',
+            'Use Coaching by Copilot for tone and clarity - ensure your message lands well before sending',
+            'Try Summarize this meeting feature after meetings - turns transcripts into action items',
+            'Use Copilot to organize your day: "What are my priorities today based on my email and calendar?"'
+        ]
+    },
+
+    // ==========================================
+    // SOCIAL MEDIA (4 cards)
+    // ==========================================
     {
         id: 'social-1',
         section: 'Social Media',
@@ -431,8 +655,25 @@ const WELLBEING_CARDS = [
             'Focus on real connections: Call one friend instead of scrolling through hundreds of acquaintances'
         ]
     },
-    
-    // PHYSICAL HEALTH (4 cards)
+    {
+        id: 'social-4',
+        section: 'Social Media',
+        icon: '👥',
+        symptom: 'Isolated and Disconnected',
+        description: 'You feel lonely at work. You do not know what is happening in other departments or who to ask for help. The college feels fragmented, especially since hybrid working started.',
+        treatment: 'Use Digital Tools for Community Building',
+        strategies: [
+            'Join or create Teams channels for shared interests: book club, running group, wellbeing check-ins',
+            'Start a weekly virtual coffee chat - 15 minutes, casual, rotating topics',
+            'Use Yammer or Teams communities to share resources, celebrate wins, ask questions across departments',
+            'Participate in existing groups: reply to posts, share your expertise, ask genuine questions',
+            'Organize virtual lunch and learn sessions - everyone eats together while someone presents something interesting'
+        ]
+    },
+
+    // ==========================================
+    // PHYSICAL HEALTH (4 cards - unchanged)
+    // ==========================================
     {
         id: 'physical-1',
         section: 'Physical Health',
