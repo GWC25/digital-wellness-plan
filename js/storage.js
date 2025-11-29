@@ -1,5 +1,5 @@
 // DIGITAL WELLNESS PLAN - STORAGE
-const Storage = {
+const WellbeingStorage = {
     KEYS: {
         GOALS: 'dwp_goals',
         FAVOURITES: 'dwp_favourites',
