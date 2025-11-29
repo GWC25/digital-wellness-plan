@@ -54,8 +54,8 @@ function renderCards() {
     }
     
     // Get current goals and favourites
-    const goals = Storage.getGoals();
-    const favourites = Storage.getFavourites();
+    const goals = WellbeingStorage.getGoals();
+    const favourites = WellbeingStorage.getFavourites();
     
     // Create card elements
     filteredCards.forEach(card => {
@@ -127,13 +127,13 @@ function flipCard(cardId) {
 
 // Add goal
 function addGoal(cardId) {
-    const success = Storage.addGoal(cardId);
+    const success = WellbeingStorage.addGoal(cardId);
     
     if (success) {
         alert('Goal added to your dashboard!');
         renderCards(); // Re-render to update button states
     } else {
-        const goals = Storage.getGoals();
+        const goals = WellbeingStorage.getGoals();
         if (goals.length >= 3) {
             alert('You can only have 3 goals at a time. Remove one from your dashboard to add another.');
         } else {
@@ -144,7 +144,7 @@ function addGoal(cardId) {
 
 // Toggle favourite
 function toggleFavourite(cardId) {
-    const isFavourite = Storage.toggleFavourite(cardId);
+    const isFavourite = WellbeingStorage.toggleFavourite(cardId);
     
     if (isFavourite) {
         alert('Card added to favourites!');
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCards();
     
     // Apply saved settings
-    const settings = Storage.getSettings();
+    const settings = WellbeingStorage.getSettings();
     if (settings.fontSize) {
         document.documentElement.style.setProperty('--font-scale', settings.fontSize);
     }
