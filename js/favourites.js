@@ -10,8 +10,8 @@ function displayFavourites() {
     
     favouritesContainer.innerHTML = '';
     
-    const favouriteIds = Storage.getFavourites();
-    const goals = Storage.getGoals();
+    const favouriteIds = WellbeingStorage.getFavourites();
+    const goals = WellbeingStorage.getGoals();
     const goalsAtLimit = goals.length >= 3;
     
     // Show empty state if no favourites
@@ -20,7 +20,7 @@ function displayFavourites() {
             <div class="empty-state">
                 <div class="empty-state-icon">💙</div>
                 <p class="empty-state-message">You haven't saved any favourites yet. When you find cards that resonate, tap the ☆ Favourite button to save them here.</p>
-                <button class="btn btn-primary" data-section="surgery">Browse Wellbeing Surgery</button>
+                <button class="btn btn-primary" onclick="window.location.href='surgery.html'">Browse Wellbeing Surgery</button>
             </div>
         `;
         return;
@@ -92,13 +92,13 @@ function displayFavourites() {
 
 // Add goal from favourites
 function addGoalFromFavourites(cardId) {
-    const success = Storage.addGoal(cardId);
+    const success = WellbeingStorage.addGoal(cardId);
     
     if (success) {
         alert('Goal added to your dashboard!');
         displayFavourites(); // Re-render to update button states
     } else {
-        const goals = Storage.getGoals();
+        const goals = WellbeingStorage.getGoals();
         if (goals.length >= 3) {
             alert('You can only have 3 goals at a time. Remove one from your dashboard to add another.');
         } else {
@@ -110,7 +110,7 @@ function addGoalFromFavourites(cardId) {
 // Remove favourite
 function removeFavourite(cardId) {
     if (confirm('Remove this card from your favourites?')) {
-        Storage.toggleFavourite(cardId);
+        WellbeingStorage.toggleFavourite(cardId);
         displayFavourites();
     }
 }
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     displayFavourites();
     
     // Apply saved settings
-    const settings = Storage.getSettings();
+    const settings = WellbeingStorage.getSettings();
     if (settings.fontSize) {
         document.documentElement.style.setProperty('--font-scale', settings.fontSize);
     }
